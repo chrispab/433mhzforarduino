@@ -17,6 +17,12 @@ NewRemoteTransmitter::NewRemoteTransmitter(unsigned long address, byte pin, unsi
 	pinMode(_pin, OUTPUT);
 }
 
+
+void NewRemoteTransmitter::setAddress(unsigned long address) {
+		_address = address;
+}
+
+
 void NewRemoteTransmitter::sendGroup(boolean switchOn) {
 	for (int8_t i = _repeats; i >= 0; i--) {
 		_sendStartPulse();
